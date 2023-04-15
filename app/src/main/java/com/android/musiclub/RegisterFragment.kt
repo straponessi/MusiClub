@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.musiclub.databinding.FragmentRegisterBinding
+import com.android.musiclub.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class RegisterFragment : Fragment() {
@@ -53,6 +56,11 @@ class RegisterFragment : Fragment() {
                 "passwords don't match", Toast.LENGTH_SHORT).show()
             return
         }
+        if( password.length < 6) {
+            Toast.makeText(requireContext(),
+                "password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         signUpMember(nickname, email, password, confirmPassword)
     }
@@ -64,6 +72,8 @@ class RegisterFragment : Fragment() {
                 if (it.isSuccessful) return@addOnCompleteListener
                 Toast.makeText(requireContext(),
                     "successfully created", Toast.LENGTH_SHORT).show()
+                val userUid = it.result.user!!.uid
+                saveUserToFirebaseDB(UserModel(nickname, userUid, null, null))
             }
             .addOnFailureListener{
                 Toast.makeText(requireContext(),
@@ -71,9 +81,25 @@ class RegisterFragment : Fragment() {
             }
     }
 
+    private fun saveUserToFirebaseDB(userModel: UserModel) {
+
+        Firebase.database.reference
+            .child("users")
+            .child(userModel.userUid)
+            .setValue(userModel)
+            .addOnSuccessListener {
+                Toast.makeText(requireContext(),
+                    "successfully saved", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_registerFragment_to_friendFragment)
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(),
+                    "save failed", Toast.LENGTH_SHORT).show()
+            }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
-
         _binding = null
     }
 }

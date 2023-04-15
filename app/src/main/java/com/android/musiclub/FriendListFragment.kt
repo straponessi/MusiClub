@@ -29,13 +29,15 @@ class FriendListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val user = FirebaseAuth.getInstance().currentUser
-        
-
-        if (user == null) {
+        if (FirebaseAuth.getInstance().currentUser == null) {
             findNavController().navigate(R.id.action_friendFragment_to_loginFragment)
         } else {
             fetchCurrentUser()
+
+            binding.btnLogout.setOnClickListener{
+               FirebaseAuth.getInstance().signOut()
+                findNavController().navigate(R.id.action_friendFragment_to_loginFragment)
+            }
         }
     }
 
