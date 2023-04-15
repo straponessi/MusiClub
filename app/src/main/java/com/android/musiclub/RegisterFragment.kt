@@ -84,19 +84,19 @@ class RegisterFragment : Fragment() {
     private fun saveUserToFirebaseDB(userModel: UserModel) {
 
         Firebase.database.reference
-            .child("users")
-            .child(userModel.userUid)
-            .setValue(userModel)
-            .addOnSuccessListener {
+                       .child("users")
+                       .child(userModel.userUid)
+                       .setValue(userModel)
+                       .addOnSuccessListener {
                 Toast.makeText(requireContext(),
                     "successfully saved", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_registerFragment_to_friendFragment)
-            }
-            .addOnFailureListener {
+                       }
+                       .addOnFailureListener {
                 Toast.makeText(requireContext(),
                     "save failed", Toast.LENGTH_SHORT).show()
             }
-    }
+               }
 
     override fun onDestroyView() {
         super.onDestroyView()

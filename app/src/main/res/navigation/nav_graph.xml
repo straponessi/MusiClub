@@ -38,4 +38,14 @@
             android:id="@+id/action_registerFragment_to_friendFragment"
             app:destination="@id/friendFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.android.musiclub.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/chatRoomFragment"
+        android:name="com.android.musiclub.chatRoomFragment"
+        android:label="fragment_chat_room"
+        tools:layout="@layout/fragment_chat_room" />
 </navigation>
