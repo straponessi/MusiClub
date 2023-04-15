@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95346778545",
+    "project_id": "musiclub-5a3ac",
+    "storage_bucket": "musiclub-5a3ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95346778545:android:242088798817176af81d90",
+        "android_client_info": {
+          "package_name": "com.android.musiclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95346778545-dm6uf4lpctq5jsto0kno78um0k4kppbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoV-wl-8RigNzkFZmSDNqwBK-XjEgWnVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95346778545-dm6uf4lpctq5jsto0kno78um0k4kppbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
