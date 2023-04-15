@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/friendFragment">
+    app:startDestination="@id/friend_List_Fragment">
 
     <fragment
-        android:id="@+id/friendFragment"
+        android:id="@+id/friend_List_Fragment"
         android:name="com.android.musiclub.FriendListFragment"
         android:label="fragment_friend"
         tools:layout="@layout/fragment_friend_list" >
         <action
-            android:id="@+id/action_friendFragment_to_loginFragment"
+            android:id="@+id/action_friend_List_Fragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
@@ -20,8 +20,8 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_friendFragment"
-            app:destination="@id/friendFragment" />
+            android:id="@+id/action_loginFragment_to_friend_List_Fragment"
+            app:destination="@id/friend_List_Fragment" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -35,8 +35,8 @@
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_registerFragment_to_friendFragment"
-            app:destination="@id/friendFragment" />
+            android:id="@+id/action_registerFragment_to_friend_List_Fragment"
+            app:destination="@id/friend_List_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"

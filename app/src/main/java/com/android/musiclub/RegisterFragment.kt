@@ -69,7 +69,7 @@ class RegisterFragment : Fragment() {
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                if (it.isSuccessful) return@addOnCompleteListener
+                if (!it.isSuccessful) return@addOnCompleteListener
                 Toast.makeText(requireContext(),
                     "successfully created", Toast.LENGTH_SHORT).show()
                 val userUid = it.result.user!!.uid
@@ -84,19 +84,19 @@ class RegisterFragment : Fragment() {
     private fun saveUserToFirebaseDB(userModel: UserModel) {
 
         Firebase.database.reference
-                       .child("users")
-                       .child(userModel.userUid)
-                       .setValue(userModel)
-                       .addOnSuccessListener {
+            .child("users")
+            .child(userModel.userUid)
+            .setValue(userModel)
+            .addOnSuccessListener {
                 Toast.makeText(requireContext(),
                     "successfully saved", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_registerFragment_to_friendFragment)
-                       }
-                       .addOnFailureListener {
+                this.findNavController().navigate(R.id.action_registerFragment_to_friend_List_Fragment)
+            }
+            .addOnFailureListener {
                 Toast.makeText(requireContext(),
                     "save failed", Toast.LENGTH_SHORT).show()
             }
-               }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

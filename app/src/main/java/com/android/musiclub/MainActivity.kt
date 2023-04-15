@@ -2,10 +2,8 @@ package com.android.musiclub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.android.musiclub.databinding.ActivityMainBinding
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.friendFragment, R.id.chatRoomFragment, R.id.accountFragment ->
+                R.id.friend_List_Fragment, R.id.chatRoomFragment, R.id.accountFragment ->
                     binding.bottomNav.visibility = View.VISIBLE
                 else -> binding.bottomNav.visibility = View.GONE
             }

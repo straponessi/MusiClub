@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/friendFragment"
+        android:id="@+id/friend_List_Fragment"
         android:icon="@drawable/people_icon"
         android:title="Discover"/>
     <item

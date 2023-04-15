@@ -30,14 +30,14 @@ class FriendListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (FirebaseAuth.getInstance().currentUser == null) {
-            findNavController().navigate(R.id.action_friendFragment_to_loginFragment)
+            findNavController().navigate(R.id.action_friend_List_Fragment_to_loginFragment)
         } else {
             fetchCurrentUser()
+        }
 
-            binding.btnLogout.setOnClickListener{
-               FirebaseAuth.getInstance().signOut()
-                findNavController().navigate(R.id.action_friendFragment_to_loginFragment)
-            }
+        binding.btnLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            findNavController().navigate(R.id.action_friend_List_Fragment_to_loginFragment)
         }
     }
 

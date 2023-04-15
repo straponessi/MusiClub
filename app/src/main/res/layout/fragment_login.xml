@@ -36,7 +36,8 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:text="LOGIN"
+        android:text="Sign in"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

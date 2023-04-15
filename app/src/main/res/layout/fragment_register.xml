@@ -64,7 +64,8 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:text="Register"
+        android:text="Sign up"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +74,7 @@
 
     <TextView
         android:id="@+id/txt_login"
-        android:text="Have account? Sign In"
+        android:text="Already have an account? Sign In"
         android:textSize="16sp"
         android:textStyle="italic|bold"
         android:layout_width="wrap_content"
