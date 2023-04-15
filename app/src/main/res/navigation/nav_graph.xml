@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_chatLogFragment"
+            app:destination="@id/chatLogFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -45,7 +48,19 @@
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/chatRoomFragment"
-        android:name="com.android.musiclub.chatRoomFragment"
+        android:name="com.android.musiclub.ChatRoomFragment"
         android:label="fragment_chat_room"
         tools:layout="@layout/fragment_chat_room" />
+    <fragment
+        android:id="@+id/chatLogFragment"
+        android:name="com.android.musiclub.ChatLogFragment"
+        android:label="fragment_chat_log"
+        tools:layout="@layout/fragment_chat_log" >
+        <action
+            android:id="@+id/action_chatLogFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <argument
+            android:name="friend_selected"
+            app:argType="com.android.musiclub.models.UserModel" />
+    </fragment>
 </navigation>

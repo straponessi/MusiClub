@@ -4,22 +4,29 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.musiclub.databinding.FragmentAccountBinding
+import androidx.navigation.fragment.navArgs
+import com.android.musiclub.databinding.FragmentChatLogBinding
+import com.android.musiclub.models.UserModel
 
+class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
-class AccountFragment : BaseFragment<FragmentAccountBinding>() {
+    private val args: ChatLogFragmentArgs by navArgs()
+
+    companion object {
+        lateinit var friend: UserModel
+    }
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentAccountBinding {
-        return  FragmentAccountBinding.inflate(inflater, container, false)
+    ): FragmentChatLogBinding {
+        return FragmentChatLogBinding.inflate(inflater, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        friend = args.friendSelected
 
     }
 

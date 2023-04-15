@@ -1,19 +1,14 @@
 package com.android.musiclub
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.experimental.UseExperimental
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import coil.memory.MemoryCache
 import com.android.musiclub.adapters.FriendListRecyclerAdapter
 import com.android.musiclub.databinding.FragmentFriendListBinding
 import com.android.musiclub.models.UserModel
-import com.google.firebase.FirebaseApiNotAvailableException
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,12 +16,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.app
 
-class FriendListFragment : Fragment() {
-
-    private var _binding: FragmentFriendListBinding? = null
-    private val binding get() = _binding!!
+class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
 
     private val friendListRecyclerAdapter: FriendListRecyclerAdapter by lazy {
         FriendListRecyclerAdapter()
@@ -36,15 +27,13 @@ class FriendListFragment : Fragment() {
         var currentUser: UserModel? = null
     }
 
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentFriendListBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentFriendListBinding {
+        return FragmentFriendListBinding.inflate(inflater, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -62,7 +51,10 @@ class FriendListFragment : Fragment() {
         }
 
         friendListRecyclerAdapter.onItemClickListener = { friend ->
-
+            findNavController().navigate(
+                FriendListFragmentDirections.actionFriendListFragmentToChatLogFragment(friend)
+            )
+            //
         }
     }
 
@@ -105,9 +97,14 @@ class FriendListFragment : Fragment() {
             })
     }
 
+
+    override fun onBackPressed() {
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+
     }
 
 }
