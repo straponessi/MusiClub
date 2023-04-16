@@ -50,9 +50,9 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
             fetchUsers()
         }
 
-        friendListRecyclerAdapter.onItemClickListener = { friend ->
+        friendListRecyclerAdapter.onItemClickListener = { friendUid ->
             findNavController().navigate(
-                FriendListFragmentDirections.actionFriendListFragmentToChatLogFragment(friend)
+                FriendListFragmentDirections.actionFriendListFragmentToChatLogFragment(friendUid)
             )
             //
         }

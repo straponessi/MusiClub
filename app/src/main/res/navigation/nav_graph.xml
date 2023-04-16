@@ -60,8 +60,8 @@
             android:id="@+id/action_chatLogFragment_to_friend_List_Fragment"
             app:destination="@id/friend_List_Fragment" />
         <argument
-            android:name="friend_selected"
-            app:argType="com.android.musiclub.models.UserModel" />
+            android:name="friendUid_selected"
+            app:argType="string" />
 
     </fragment>
 </navigation>

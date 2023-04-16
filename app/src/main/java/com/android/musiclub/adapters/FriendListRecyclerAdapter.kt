@@ -14,7 +14,7 @@ class FriendListRecyclerAdapter : RecyclerView.Adapter<FriendListRecyclerAdapter
 
     private val friendList = mutableListOf<UserModel>()
 
-    var onItemClickListener : ((UserModel) -> Unit)? = null
+    var onItemClickListener : ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -47,7 +47,7 @@ class FriendListRecyclerAdapter : RecyclerView.Adapter<FriendListRecyclerAdapter
                 itemFriendName.text = user.userName
 
                 root.setOnClickListener {
-                    onItemClickListener?.invoke(user)
+                    onItemClickListener?.invoke(user.userUid)
                 }
             }
         }

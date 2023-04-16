@@ -12,9 +12,9 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
     private val args: ChatLogFragmentArgs by navArgs()
 
-    companion object {
-        lateinit var friend: UserModel
-    }
+    private lateinit var friendUid: String
+    private lateinit var currentUserUid: String
+
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
@@ -26,7 +26,7 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        friend = args.friendSelected
+        friendUid = args.friendSelected
 
     }
 
