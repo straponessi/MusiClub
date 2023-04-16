@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.android.musiclub.databinding.FragmentChatLogBinding
@@ -38,6 +39,13 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
         friendUid = args.friendUidSelected
         currentUserUid = FirebaseAuth.getInstance().uid!!
 
+        binding.messageRecyclerview.apply{
+
+            adapter = RecyclerviewApadter()
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false )
+
+        }
+
     }
 
     override fun onBackPressed() {
@@ -56,7 +64,11 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
         private var friend: UserModel? = null
 
         init {
-
+            chatModelList = mutableListOf(
+                ChatRoomModel.Companion.ChatModel("Daun","PoshelYaNahuy","SEND", 0L, mutableMapOf()),
+                ChatRoomModel.Companion.ChatModel("Whoayang","nuhiuya lil young","RECEIVER", 0L, mutableMapOf())
+            )
+            notifyDataSetChanged()
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -74,12 +86,13 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
             }
         }
 
-        override fun getItemCount(): Int {
-            TODO("Not yet implemented")
-        }
+        override fun getItemCount(): Int = chatModelList.size
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            TODO("Not yet implemented")
+            if (chatModelList[position].msgType == "SEND")
+                (holder as TextRightViewHolder).bind(chatModelList[position])
+            else
+                    (holder as TextLeftViewHolder).bind(chatModelList[position])
         }
 
         override fun getItemViewType(position: Int): Int {
@@ -88,12 +101,24 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
         inner class TextLeftViewHolder(private val binding: ItemChatLeftBinding) : ViewHolder(binding.root) {
             fun bind(chat: ChatRoomModel.Companion.ChatModel) {
+                binding.apply {
+                    chat.also {
+                        itemUsername.text = it.fromUid
+                        itemMessage.text = it.message
+                        itemTimestamp.text = "9:45"
+                    }
+                }
 
             }
         }
         inner class TextRightViewHolder(private val binding: ItemChatRightBinding) : ViewHolder(binding.root) {
             fun bind(chat: ChatRoomModel.Companion.ChatModel) {
-
+                binding.apply {
+                    chat.also {
+                        itemMessage.text = it.message
+                        itemTimestamp.text = "9:47"
+                    }
+                }
             }
         }
 
