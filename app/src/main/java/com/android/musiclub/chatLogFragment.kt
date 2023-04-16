@@ -26,7 +26,7 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        friendUid = args.friendSelected
+        friendUid = args.friendUidSelected
 
     }
 
