@@ -13,7 +13,6 @@ import com.android.musiclub.models.UserModel
 class FriendListRecyclerAdapter : RecyclerView.Adapter<FriendListRecyclerAdapter.CustomHolder>() {
 
     private val friendList = mutableListOf<UserModel>()
-
     var onItemClickListener : ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomHolder {
@@ -43,7 +42,6 @@ class FriendListRecyclerAdapter : RecyclerView.Adapter<FriendListRecyclerAdapter
                         transformations(CircleCropTransformation())
                     }
                 }
-
                 itemFriendName.text = user.userName
 
                 root.setOnClickListener {

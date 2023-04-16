@@ -17,8 +17,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="a mozhet ti nahuy ?"
-        />
+        tools:text="a mozhet ti nahuy ?"/>
 
     <TextView
         android:id="@+id/item_count_unread"
@@ -28,9 +27,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/item_timestamp"
         app:layout_constraintEnd_toEndOf="@id/item_timestamp"
-        tools:text="1"
-        />
-
+        tools:text="1"/>
 
     <TextView
         android:id="@+id/item_timestamp"
@@ -40,8 +37,6 @@
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@id/item_message"
         app:layout_constraintEnd_toStartOf="@id/item_message"
-        tools:text="9:45"
-        />
-
+        tools:text="9:45" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

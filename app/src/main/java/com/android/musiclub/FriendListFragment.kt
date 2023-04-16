@@ -34,7 +34,6 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
         return FragmentFriendListBinding.inflate(inflater, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -54,7 +53,6 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
             findNavController().navigate(
                 FriendListFragmentDirections.actionFriendListFragmentToChatLogFragment(friendUid)
             )
-            //
         }
     }
 
@@ -74,9 +72,8 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
 
+                }
             })
     }
 
@@ -92,11 +89,10 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                }
 
+                }
             })
     }
-
 
     override fun onBackPressed() {
 
@@ -104,7 +100,5 @@ class FriendListFragment : BaseFragment<FragmentFriendListBinding>() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-
     }
-
 }

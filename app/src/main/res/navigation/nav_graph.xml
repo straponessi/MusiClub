@@ -9,59 +9,58 @@
         android:id="@+id/friend_List_Fragment"
         android:name="com.android.musiclub.FriendListFragment"
         android:label="fragment_friend"
-        tools:layout="@layout/fragment_friend_list" >
+        tools:layout="@layout/fragment_friend_list">
         <action
             android:id="@+id/action_friend_List_Fragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"/>
         <action
             android:id="@+id/action_friend_List_Fragment_to_chatLogFragment"
-            app:destination="@id/chatLogFragment" />
+            app:destination="@id/chatLogFragment"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.android.musiclub.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_friend_List_Fragment"
-            app:destination="@id/friend_List_Fragment" />
+            app:destination="@id/friend_List_Fragment"/>
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.android.musiclub.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"/>
         <action
             android:id="@+id/action_registerFragment_to_friend_List_Fragment"
-            app:destination="@id/friend_List_Fragment" />
+            app:destination="@id/friend_List_Fragment"/>
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.android.musiclub.AccountFragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account"/>
     <fragment
         android:id="@+id/chatRoomFragment"
         android:name="com.android.musiclub.ChatRoomFragment"
         android:label="fragment_chat_room"
-        tools:layout="@layout/fragment_chat_room" />
+        tools:layout="@layout/fragment_chat_room"/>
     <fragment
         android:id="@+id/chatLogFragment"
         android:name="com.android.musiclub.ChatLogFragment"
         android:label="fragment_chat_log"
-        tools:layout="@layout/fragment_chat_log" >
+        tools:layout="@layout/fragment_chat_log">
         <action
             android:id="@+id/action_chatLogFragment_to_friend_List_Fragment"
-            app:destination="@id/friend_List_Fragment" />
+            app:destination="@id/friend_List_Fragment"/>
         <argument
             android:name="friendUid_selected"
-            app:argType="string" />
-
+            app:argType="string"/>
     </fragment>
 </navigation>

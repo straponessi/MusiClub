@@ -8,7 +8,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.android.musiclub.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
 
     private val binding : ActivityMainBinding by lazy {
@@ -34,6 +33,5 @@ class MainActivity : AppCompatActivity() {
                 else -> binding.bottomNav.visibility = View.GONE
             }
         }
-
     }
 }

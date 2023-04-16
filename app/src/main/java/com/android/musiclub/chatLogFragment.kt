@@ -21,7 +21,6 @@ private const val TEXT_RIGHT = 2
 class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
     private val args: ChatLogFragmentArgs by navArgs()
-
     private lateinit var friendUid: String
     private lateinit var currentUserUid: String
 
@@ -43,9 +42,7 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
             adapter = RecyclerviewApadter()
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false )
-
         }
-
     }
 
     override fun onBackPressed() {
@@ -58,9 +55,7 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
 
     inner class RecyclerviewApadter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
         private var chatModelList = mutableListOf<ChatRoomModel.Companion.ChatModel>()
-
         private var friend: UserModel? = null
 
         init {
@@ -108,7 +103,6 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
                         itemTimestamp.text = "9:45"
                     }
                 }
-
             }
         }
         inner class TextRightViewHolder(private val binding: ItemChatRightBinding) : ViewHolder(binding.root) {
@@ -121,7 +115,5 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
                 }
             }
         }
-
     }
-
 }

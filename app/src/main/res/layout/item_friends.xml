@@ -10,8 +10,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/item_friend_name"
@@ -22,7 +21,6 @@
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/item_friend_imageview"
         app:layout_constraintTop_toTopOf="@id/item_friend_imageview"
-        app:layout_constraintBottom_toBottomOf="@id/item_friend_imageview"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/item_friend_imageview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

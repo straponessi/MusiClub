@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
     override fun getFragmentBinding(
         inflater: LayoutInflater,
@@ -20,9 +19,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
     ): FragmentRegisterBinding {
         return FragmentRegisterBinding.inflate(inflater, container, false)
     }
-
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,7 +53,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                 "password must be at least 6 characters", Toast.LENGTH_SHORT).show()
             return
         }
-
         signUpMember(nickname, email, password, confirmPassword)
     }
 
@@ -100,6 +95,5 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-
     }
 }

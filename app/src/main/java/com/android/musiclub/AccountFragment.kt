@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.android.musiclub.databinding.FragmentAccountBinding
 
-
 class AccountFragment : BaseFragment<FragmentAccountBinding>() {
 
     override fun getFragmentBinding(
@@ -18,9 +17,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
     }
 
     override fun onBackPressed() {
@@ -30,5 +26,4 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
     override fun onDestroyView() {
         super.onDestroyView()
     }
-
 }
