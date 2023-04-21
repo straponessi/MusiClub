@@ -3,6 +3,7 @@ package com.android.musiclub
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnLayoutChangeListener
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -64,6 +65,27 @@ class ChatLogFragment : BaseFragment<FragmentChatLogBinding>() {
                 ChatRoomModel.Companion.ChatModel("Whoayang","nuhiuya lil young","RECEIVER", 0L, mutableMapOf())
             )
             notifyDataSetChanged()
+
+            binding.messageRecyclerview.addOnLayoutChangeListener(object : OnLayoutChangeListener {
+                override fun onLayoutChange(v: View?,
+                                            left: Int,
+                                            top: Int,
+                                            right: Int,
+                                            bottom: Int,
+                                            oldLeft: Int,
+                                            oldTop: Int,
+                                            oldRight: Int,
+                                            oldBottom: Int
+                ) {
+                    if (bottom < oldBottom){
+                        binding.messageRecyclerview.postDelayed({
+                            binding.messageRecyclerview.scrollToPosition(chatModelList.size - 1)
+                        }, 100 )
+                    }
+                }
+
+            })
+
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
