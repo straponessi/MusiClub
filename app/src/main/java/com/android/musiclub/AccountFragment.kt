@@ -65,7 +65,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
 
     private fun fetchCurrentUser() {
         Firebase.database.reference
-            .child("/users/$currentUser")
+            .child("/users/$currentUserUid")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if(snapshot.exists()) {
