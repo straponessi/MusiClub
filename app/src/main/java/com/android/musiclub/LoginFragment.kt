@@ -29,24 +29,24 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     }
 
     private fun performLogin() {
-      val client = OkHttpClient()
-
-        val request = Request.Builder()
-            .url("https://publicobject.com/helloworld.txt")
-            .build()
-
-
-            client.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) {
-                    throw IOException("Запрос к серверу не был успешен:" +
-                            " ${response.code} ${response.message}")
-                }
-                // пример получения конкретного заголовка ответа
-                println("Server: ${response.header("Server")}")
-                // вывод тела ответа
-                println(response.body!!.string())
-            }
-
+   //   val client = OkHttpClient()
+//
+   //     val request = Request.Builder()
+   //         .url("https://publicobject.com/helloworld.txt")
+   //         .build()
+//
+//
+   //         client.newCall(request).execute().use { response ->
+   //             if (!response.isSuccessful) {
+   //                 throw IOException("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ:" +
+   //                         " ${response.code} ${response.message}")
+   //             }
+   //             // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+   //             println("Server: ${response.header("Server")}")
+   //             // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+   //             println(response.body!!.string())
+   //         }
+//
     }
 
     override fun onBackPressed() {
